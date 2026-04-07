@@ -2,7 +2,7 @@
   "name": "Equisaúde",
   "orientation": "any",
   "short_name": "Equisaúde",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
