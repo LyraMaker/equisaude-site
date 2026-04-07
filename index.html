@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equisaude | Novo</title>
+  <link rel="shortcut icon" href="equ-logo.png" type="image/png">
+  
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <div class="container my-5">
+    <div class="no-print card p-4 shadow-sm">
+      <h1 class="card-title text-center mb-4 text-primary">Ficha Clínica Equina</h1>
+
+      <form id="ficha-form">
+        <div class="step active mt-4" id="step-1">
+          <h2 class="h5 text-secondary border-bottom pb-2 mb-4">1. Dados de Identificação</h2>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nome_paciente" class="form-label fw-bold">Nome do Paciente</label>
+              <input type="text" class="form-control" id="nome_paciente" name="nome_paciente">
+            </div>
+            <div class="col-md-6">
+              <label for="peso" class="form-label fw-bold">Peso (kg)</label>
+              <input type="number" class="form-control" id="peso" name="peso">
+            </div>
+            <div class="col-md-6">
+              <label for="idade" class="form-label fw-bold">Idade</label>
+              <input type="text" class="form-control" id="idade" name="idade">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold d-block text-center">Sexo</label>
+              <div class="d-flex justify-content-center">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexo_masculino" value="masculino">
+                  <label class="form-check-label" for="sexo_masculino">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexo_feminino" value="feminino">
+                  <label class="form-check-label" for="sexo_feminino">Feminino</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="raca" class="form-label fw-bold">Raça</label>
+              <input type="text" class="form-control" id="raca" name="raca">
+            </div>
+            <div class="col-md-6">
+              <label for="pelagem" class="form-label fw-bold">Pelagem</label>
+              <input type="text" class="form-control" id="pelagem" name="pelagem">
+            </div>
+            <div class="col-md-6">
+              <label for="proprietario" class="form-label fw-bold">Proprietário</label>
+              <input type="text" class="form-control" id="proprietario" name="proprietario">
+            </div>
+            <div class="col-md-6">
+              <label for="telefone" class="form-label fw-bold">Telefone</label>
+              <input type="text" class="form-control" id="telefone" name="telefone">
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label fw-bold">E-mail</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="col-md-6">
+              <label for="cidade" class="form-label fw-bold">Cidade</label>
+              <input type="text" class="form-control" id="cidade" name="cidade">
+            </div>
+          </div>
+        </div>
+
+        <div class="step active mt-4" id="step-2">
+          <h2 class="h5 text-secondary border-bottom pb-2 mb-4">2. Manejo Alimentar e Sanidade</h2>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="volumoso_tipo" class="form-label fw-bold">Volumoso</label>
+              <select class="form-select mb-2" id="volumoso_tipo" name="volumoso_tipo">
+                <option value="" disabled selected>Selecione...</option>
+                <option value="pastagem">Pastagem</option>
+                <option value="feno">Feno</option>
+                <option value="silagem">Silagem</option>
+                <option value="capim_cortado">Capim cortado (capineira)</option>
+              </select>
+              <input type="text" class="form-control" id="volumoso_quantidade" name="volumoso_quantidade"
+                placeholder="Quantidade">
+            </div>
+            <div class="col-md-6">
+              <label for="concentrado_tipo" class="form-label fw-bold">Concentrado</label>
+              <select class="form-select mb-2" id="concentrado_tipo" name="concentrado_tipo">
+                <option value="" disabled selected>Selecione...</option>
+                <option value="graos">Grãos (milho, aveia, cevada)</option>
+                <option value="oleaginosas">Sementes de oleaginosas (soja, farelo de soja)</option>
+                <option value="farelos">Farelos (milho, soja)</option>
+                <option value="racoes">Rações comerciais (farelada, peletizada, extrusada)</option>
+              </select>
+              <input type="text" class="form-control" id="concentrado_quantidade" name="concentrado_quantidade"
+                placeholder="Quantidade">
+            </div>
+
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+              <div>
+                <label class="form-label fw-bold d-block text-center">Sal mineral</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sal_mineral" id="sal_mineral_sim" value="1">
+                  <label class="form-check-label" for="sal_mineral_sim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sal_mineral" id="sal_mineral_nao" value="0">
+                  <label class="form-check-label" for="sal_mineral_nao">Não</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="sal_quantidade" class="form-label fw-bold">Quantidade de Sal Mineral</label>
+              <input type="text" class="form-control" id="sal_quantidade" name="sal_quantidade">
+            </div>
+            <div class="col-md-6">
+              <label for="agua" class="form-label fw-bold">Ingestão de água</label>
+              <input type="text" class="form-control" id="agua" name="agua">
+            </div>
+            <div class="col-md-6">
+              <label for="suplementos" class="form-label fw-bold">Suplementos</label>
+              <input type="text" class="form-control" id="suplementos" name="suplementos">
+            </div>
+            <div class="col-md-6">
+              <label for="vacinacao" class="form-label fw-bold">Vacinação</label>
+              <textarea class="form-control" id="vacinacao" name="vacinacao" rows="3"></textarea>
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+              <div>
+                <label class="form-label fw-bold d-block text-center">Vermifugação</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="vermifugacao" id="vermifugacao_sim" value="1">
+                  <label class="form-check-label" for="vermifugacao_sim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="vermifugacao" id="vermifugacao_nao" value="0">
+                  <label class="form-check-label" for="vermifugacao_nao">Não</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 d-flex align-items-center justify-content-center">
+              <div>
+                <label class="form-label fw-bold d-block text-center">Treinamento</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="treinamento" id="treinamento_sim" value="1">
+                  <label class="form-check-label" for="treinamento_sim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="treinamento" id="treinamento_nao" value="0">
+                  <label class="form-check-label" for="treinamento_nao">Não</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step active mt-4" id="step-3">
+          <h2 class="h5 text-secondary border-bottom pb-2 mb-4">3. Exame Físico Geral</h2>
+
+          <div class="mb-3 col-md-12">
+            <label class="form-label fw-bold" for="escore_condicao_corporal">Escore de condição
+              corporal</label>
+            <select class="form-select" id="escore_condicao_corporal" name="escore_condicao_corporal">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="1"><strong>1</strong> - Extremamente magro</option>
+              <option value="2"><strong>2</strong> - Muito Magro</option>
+              <option value="3"><strong>3</strong> - Magro</option>
+              <option value="4"><strong>4</strong> - Moderadamente magro</option>
+              <option value="5"><strong>5</strong> - Moderado</option>
+              <option value="6"><strong>6</strong> - Moderadamente gordo</option>
+              <option value="7"><strong>7</strong> - Gordo</option>
+              <option value="8"><strong>8</strong> - Muito gordo</option>
+              <option value="9"><strong>9</strong> - Extremamente Gordo</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-bold" for="estado_geral">Estado geral</label>
+            <select class="form-select" id="estado_geral" name="estado_geral">
+              <option value="" disabled selected>Selecione...</option>
+              <option value="1"><strong>1</strong> - Péssimo</option>
+              <option value="2"><strong>2</strong> - Ruim</option>
+              <option value="3"><strong>3</strong> - Regular</option>
+              <option value="4"><strong>4</strong> - Bom</option>
+              <option value="5"><strong>5</strong> - Ótimo</option>
+            </select>
+          </div>
+
+
+          <div class="row mb-3">
+            <div class="col-md-6 d-flex flex-column align-items-center">
+              <label class="form-label fw-bold mb-2 col-12 text-center">Nível de consciência</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="nivel_consciencia" id="consciencia1"
+                    value="alerta">
+                  <label class="form-check-label" for="consciencia1">Alerta</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="nivel_consciencia" id="consciencia2"
+                    value="deprimido">
+                  <label class="form-check-label" for="consciencia2">Deprimido</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="nivel_consciencia" id="consciencia3"
+                    value="estupor">
+                  <label class="form-check-label" for="consciencia3">Estupor</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="nivel_consciencia" id="consciencia4" value="coma">
+                  <label class="form-check-label" for="consciencia4">Coma</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 d-flex flex-column align-items-center">
+              <label class="form-label fw-bold mb-2">Comportamento</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="comportamento" id="comportamento1" value="docil">
+                  <label class="form-check-label" for="comportamento1">Dócil</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="comportamento" id="comportamento2"
+                    value="inquieto">
+                  <label class="form-check-label" for="comportamento2">Inquieto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="comportamento" id="comportamento3" value="medroso">
+                  <label class="form-check-label" for="comportamento3">Medroso</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="comportamento" id="comportamento4"
+                    value="agressivo">
+                  <label class="form-check-label" for="comportamento4">Agressivo</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="postura" class="form-label fw-bold">Postura</label>
+              <input type="text" class="form-control" id="postura" name="postura">
+            </div>
+            <div class="col-md-6">
+              <label for="temperatura" class="form-label fw-bold">Temperatura</label>
+              <input type="text" class="form-control" id="temperatura" name="temperatura">
+            </div>
+            <div class="col-md-6">
+              <label for="motilidade" class="form-label fw-bold">Motilidade</label>
+              <input type="text" class="form-control" id="motilidade" name="motilidade">
+            </div>
+            <div class="col-md-6">
+              <label for="mucosas" class="form-label fw-bold">Mucosas</label>
+              <input type="text" class="form-control" id="mucosas" name="mucosas">
+            </div>
+            <div class="col-md-6">
+              <label for="hidratacao" class="form-label fw-bold">Hidratação</label>
+              <input type="text" class="form-control" id="hidratacao" name="hidratacao">
+            </div>
+            <div class="col-md-6">
+              <label for="tpc" class="form-label fw-bold">TPC</label>
+              <input type="text" class="form-control" id="tpc" name="tpc">
+            </div>
+            <div class="col-md-6">
+              <label for="fc" class="form-label fw-bold">FC</label>
+              <input type="text" class="form-control" id="fc" name="fc">
+            </div>
+            <div class="col-md-6">
+              <label for="fr" class="form-label fw-bold">FR</label>
+              <input type="text" class="form-control" id="fr" name="fr">
+            </div>
+            <div class="col-md-6">
+              <label for="pulso" class="form-label fw-bold">Pulso arterial</label>
+              <input type="text" class="form-control" id="pulso" name="pulso">
+            </div>
+            <div class="col-md-6">
+              <label for="linfonodos" class="form-label fw-bold">Linfonodos</label>
+              <input type="text" class="form-control" id="linfonodos" name="linfonodos">
+            </div>
+            <div class="col-12 d-flex flex-column align-items-center">
+              <label class="form-label fw-bold text-center">Ectoparasitas</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ectoparasitas" id="ectoparasitas_sim" value="1">
+                  <label class="form-check-label" for="ectoparasitas_sim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ectoparasitas" id="ectoparasitas_nao" value="0">
+                  <label class="form-check-label" for="ectoparasitas_nao">Não</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <label for="cascos" class="form-label fw-bold">Cascos</label>
+              <textarea class="form-control" id="cascos" name="cascos" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="step active mt-4" id="step-4">
+          <h2 class="h5 text-secondary border-bottom pb-2 mb-4">4. Anamnese Específica e Condições Adicionais
+          </h2>
+          <div class="row text-center">
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <label class="form-label fw-bold mb-2">Ferrageamento</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ferrageamento" id="ferrageamento_sim" value="1">
+                  <label class="form-check-label" for="ferrageamento_sim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ferrageamento" id="ferrageamento_nao" value="0">
+                  <label class="form-check-label" for="ferrageamento_nao">Não</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <label class="form-label fw-bold mb-2">Claudicação</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="claudicacao" id="claudicacao_sim" value="1">
+                  <label class="form-check-label" for="claudicacao_sim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="claudicacao" id="claudicacao_nao" value="0">
+                  <label class="form-check-label" for="claudicacao_nao">Não</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center">
+              <label class="form-label fw-bold mb-2">Ferimentos</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ferimentos" id="ferimentos_sim" value="1">
+                  <label class="form-check-label" for="ferimentos_sim">Sim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ferimentos" id="ferimentos_nao" value="0">
+                  <label class="form-check-label" for="ferimentos_nao">Não</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="step active mt-4" id="step-5">
+          <h2 class="h5 text-secondary border-bottom pb-2 mb-4">5. Avaliação da Dor</h2>
+          <p class="text-muted mb-3">
+            Atribua um valor de <strong>0 (ausente)</strong> a <strong>3 (intenso)</strong>.
+          </p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered align-middle text-center" style="min-width:100%;">
+              <thead class="table-light">
+                <tr>
+                  <th class="text-start">Parâmetro</th>
+                  <th>Escala (0 a 3)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-start">Orelhas rígidas apontadas para trás</td>
+                  <td>
+                    <input type="number" class="form-control text-center" id="orelhas" name="orelhas" min="0" max="3">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-start">Aperto orbital</td>
+                  <td>
+                    <input type="number" class="form-control text-center" id="aperto_orbital" name="aperto_orbital"
+                      min="0" max="3">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-start">Tensão na região superior dos olhos</td>
+                  <td>
+                    <input type="number" class="form-control text-center" id="tensao_olhos" name="tensao_olhos" min="0"
+                      max="3">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-start">Músculos mastigatórios tensos e proeminentes</td>
+                  <td>
+                    <input type="number" class="form-control text-center" id="musculos_mastigatorios"
+                      name="musculos_mastigatorios" min="0" max="3">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-start">Boca tensa e queixo proeminente</td>
+                  <td>
+                    <input type="number" class="form-control text-center" id="boca_queixo" name="boca_queixo" min="0"
+                      max="3">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-start">Narinas tensas e perfil achatado</td>
+                  <td>
+                    <input type="number" class="form-control text-center" id="narinas" name="narinas" min="0" max="3">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="step active mt-4" id="step-6">
+          <h2 class="h5 text-secondary border-bottom pb-2 mb-4">6. Observações</h2>
+          <div class="mb-3">
+            <textarea class="form-control" id="observacoes" name="observacoes" rows="5"
+              placeholder="Digite suas observações aqui..."></textarea>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <button class="btn btn-success btn-lg" id="salvar-btn">
+            Salvar Ficha
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div id="area-impressao" class="d-none"></div>
+
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="Alerta" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="Alerta">Alerta</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mensagem"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" id="gerar-pdf">Gerar PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script type="module" src="src/js/index.js" defer></script>
+
+</html>
