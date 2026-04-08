@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equisaude | Novo</title>
   <link rel="shortcut icon" href="equ-logo.png" type="image/png">
-  
+
   <link rel="manifest" href="/manifest.json">
 </head>
 
@@ -90,10 +90,10 @@
               <label for="concentrado_tipo" class="form-label fw-bold">Concentrado</label>
               <select class="form-select mb-2" id="concentrado_tipo" name="concentrado_tipo">
                 <option value="" disabled selected>Selecione...</option>
-                <option value="graos">Grãos (milho, aveia, cevada)</option>
-                <option value="oleaginosas">Sementes de oleaginosas (soja, farelo de soja)</option>
-                <option value="farelos">Farelos (milho, soja)</option>
-                <option value="racoes">Rações comerciais (farelada, peletizada, extrusada)</option>
+                <option value="Grãos">Grãos (milho, aveia, cevada)</option>
+                <option value="Sementes de oleaginosas">Sementes de oleaginosas (soja, farelo de soja)</option>
+                <option value="Farelos">Farelos (milho, soja)</option>
+                <option value="Rações comerciais">Rações comerciais (farelada, peletizada, extrusada)</option>
               </select>
               <input type="text" class="form-control" id="concentrado_quantidade" name="concentrado_quantidade"
                 placeholder="Quantidade">
@@ -365,41 +365,43 @@
                 <tr>
                   <td class="text-start">Orelhas rígidas apontadas para trás</td>
                   <td>
-                    <input type="number" class="form-control text-center" id="orelhas" name="orelhas" min="0" max="3">
+                    <input type="number" class="form-control text-center" id="dor_orelhas" name="dor_orelhas" min="0"
+                      max="3">
                   </td>
                 </tr>
                 <tr>
                   <td class="text-start">Aperto orbital</td>
                   <td>
-                    <input type="number" class="form-control text-center" id="aperto_orbital" name="aperto_orbital"
-                      min="0" max="3">
+                    <input type="number" class="form-control text-center" id="dor_aperto_orbital"
+                      name="dor_aperto_orbital" min="0" max="3">
                   </td>
                 </tr>
                 <tr>
                   <td class="text-start">Tensão na região superior dos olhos</td>
                   <td>
-                    <input type="number" class="form-control text-center" id="tensao_olhos" name="tensao_olhos" min="0"
-                      max="3">
+                    <input type="number" class="form-control text-center" id="dor_tensao_olhos" name="dor_tensao_olhos"
+                      min="0" max="3">
                   </td>
                 </tr>
                 <tr>
                   <td class="text-start">Músculos mastigatórios tensos e proeminentes</td>
                   <td>
-                    <input type="number" class="form-control text-center" id="musculos_mastigatorios"
-                      name="musculos_mastigatorios" min="0" max="3">
+                    <input type="number" class="form-control text-center" id="dor_musculos_mastigatorios"
+                      name="dor_musculos_mastigatorios" min="0" max="3">
                   </td>
                 </tr>
                 <tr>
                   <td class="text-start">Boca tensa e queixo proeminente</td>
                   <td>
-                    <input type="number" class="form-control text-center" id="boca_queixo" name="boca_queixo" min="0"
-                      max="3">
+                    <input type="number" class="form-control text-center" id="dor_boca_queixo" name="dor_boca_queixo"
+                      min="0" max="3">
                   </td>
                 </tr>
                 <tr>
                   <td class="text-start">Narinas tensas e perfil achatado</td>
                   <td>
-                    <input type="number" class="form-control text-center" id="narinas" name="narinas" min="0" max="3">
+                    <input type="number" class="form-control text-center" id="dor_narinas" name="dor_narinas" min="0"
+                      max="3">
                   </td>
                 </tr>
               </tbody>
@@ -416,12 +418,17 @@
         </div>
 
         <div class="d-flex justify-content-between mt-4">
-          <button class="btn btn-success btn-lg" id="salvar-btn">
+          <button type="submit" class="btn btn-success btn-lg" id="salvar-btn">
             Salvar Ficha
+          </button>
+          <button id="btnListar" class="btn btn-primary btn-lg">
+            Listar Registros
           </button>
         </div>
 
       </form>
+
+       <div id="containerTabela" class="mt-4"></div>
     </div>
   </div>
 
@@ -438,7 +445,7 @@
           <div class="mensagem"></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-success" id="nova-ficha">Nova Ficha</button>
           <button type="button" class="btn btn-primary" id="gerar-pdf">Gerar PDF</button>
         </div>
       </div>

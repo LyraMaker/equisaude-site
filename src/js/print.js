@@ -76,12 +76,12 @@ export function generatePrint(data) {
   <tr>
     <th colspan="1"><strong>Indicadores</strong></th>
     <td colspan="3">
-      <strong>Orelhas rígidas apontadas para trás:</strong> ${data.dor_orelhas || '0'} / 3 |
-      <strong>Aperto orbital:</strong> ${data.dor_aperto_orbital || '0'} / 3 |
-      <strong>Tensão na região superior dos olhos:</strong> ${data.dor_tensao_olhos || '0'} / 3 |
-      <strong>Músculos mastigatórios tensos e proeminentes:</strong> ${data.dor_musculos_mastigatorios || '0'} / 3 |
-      <strong>Boca tensa e queixo proeminente:</strong> ${data.dor_boca_queixo || '0'} / 3 |
-      <strong>Narinas tensas e perfil achatado:</strong> ${data.dor_narinas || '0'} / 3
+      <strong>Orelhas rígidas apontadas para trás:</strong> <strong style='color:red'>${data.dor_orelhas || '0'}</strong> de 3 <br>
+      <strong>Aperto orbital:</strong> <strong style='color:red'>${data.dor_aperto_orbital || '0'}</strong> de 3 <br>
+      <strong>Tensão na região superior dos olhos:</strong> <strong style='color:red'>${data.dor_tensao_olhos || '0'}</strong> de 3 <br>
+      <strong>Músculos mastigatórios tensos e proeminentes:</strong> <strong style='color:red'>${data.dor_musculos_mastigatorios || '0'}</strong> de 3 <br>
+      <strong>Boca tensa e queixo proeminente:</strong> <strong style='color:red'>${data.dor_boca_queixo || '0'}</strong> de 3 <br>
+      <strong>Narinas tensas e perfil achatado:</strong> <strong style='color:red'>${data.dor_narinas || '0'}</strong> de 3
     </td>
   </tr>
 </tbody>
@@ -100,7 +100,7 @@ export function generatePrint(data) {
 export function filename(prefixo) {
   const agora = new Date();
   const year = agora.getFullYear();
-  const month = String(agora.getMonth() + 1).padStart(2, '0'); // Mês começa em 0
+  const month = String(agora.getMonth() + 1).padStart(2, '0'); 
   const day = String(agora.getDate()).padStart(2, '0');
   const hours = String(agora.getHours()).padStart(2, '0');
   const minutes = String(agora.getMinutes()).padStart(2, '0');
