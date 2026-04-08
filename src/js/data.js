@@ -80,7 +80,7 @@ export async function renderTabela() {
   if (!dados.length) {
     tbody.innerHTML = `
       <tr>
-        <td colspan="6" class="text-center text-muted">
+        <td colspan="8" class="text-center text-muted">
           Nenhum registro encontrado
         </td>
       </tr>
